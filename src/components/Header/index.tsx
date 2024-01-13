@@ -1,7 +1,7 @@
 import GithubBlogLogo from '../../assets/github-blog-logo.svg'
 import SideEffectLeft from '../../assets/side-effect-left.svg'
 import SideEffectRight from '../../assets/side-effect-right.svg'
-import { HeaderContainer } from './HeaderStyles'
+import { HeaderContainer } from './styles'
 
 export function Header() {
     return (
