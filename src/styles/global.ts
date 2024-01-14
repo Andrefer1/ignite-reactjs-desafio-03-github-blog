@@ -7,7 +7,23 @@ export const GlobalStyle = createGlobalStyle`
         box-sizing: border-box;
     }
 
-    body, input, button {
+    body {
+        background: ${(props) => props.theme.colors.base.background};
+    }
+
+    body, input, button, h1, h2, p {
         font: 400 1rem Nunito, sans-serif;
+    }
+
+    h1 {
+        ${(props) => props.theme.typographies.title.large}
+    }
+
+    h2 {
+        ${(props) => props.theme.typographies.title.medium}
+    }
+
+    h3 {
+        ${(props) => props.theme.typographies.title.small}
     }
 `;
