@@ -36,17 +36,19 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     a {
-        color: ${(props) => props.theme.colors.brand.blue};
-        font-size: 12px;
-        font-weight: 700;
-        line-height: 1.2rem;
-        text-transform: uppercase;
-        text-decoration: none;
+        ${(props) => props.theme.typographies.text.link}
     }
 
-    .text-small {
+    .text-medium {
         ${(props) => props.theme.typographies.text.medium}
     }
 
+    .text-small {
+        ${(props) => props.theme.typographies.text.small}
+    }
 
+    :focus {
+       outline: 0;
+       box-shadow: 0 0 0 2px ${(props) => props.theme.colors.base.border}
+    }
 `;

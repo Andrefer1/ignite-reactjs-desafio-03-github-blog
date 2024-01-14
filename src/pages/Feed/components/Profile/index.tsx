@@ -5,35 +5,13 @@ import {
     faUserGroup,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useEffect, useState } from 'react';
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { api } from '../../../../libs/axios';
+import { GithubContext } from '../../../../contexts';
 import { ContentContainer, ProfileContainer } from './styles';
 
-interface User {
-    avatar_url: string;
-    bio: string;
-    company: string;
-    followers: number;
-    login: string;
-    name: string;
-    url: string;
-    public_repos: number;
-    repos_url: string;
-}
-
 export function Profile() {
-    const [user, setUser] = useState<User>({} as User);
-
-    async function fetchUserDataFromGitHub() {
-        const response = await api.get(`/users/andrefer1`);
-        const data = response.data;
-        setUser(data);
-    }
-
-    useEffect(() => {
-        fetchUserDataFromGitHub();
-    }, []);
+    const { user } = useContext(GithubContext);
 
     return (
         <ProfileContainer>
@@ -60,17 +38,19 @@ export function Profile() {
                     <footer>
                         <div>
                             <FontAwesomeIcon icon={faGithub} />
-                            <div className="text-small">{user.login}</div>
+                            <div className="text-medium">{user.login}</div>
                         </div>
                         {user.company && (
                             <div>
                                 <FontAwesomeIcon icon={faBuilding} />
-                                <div className="text-small">{user.company}</div>
+                                <div className="text-medium">
+                                    {user.company}
+                                </div>
                             </div>
                         )}
                         <div>
                             <FontAwesomeIcon icon={faUserGroup} />
-                            <div className="text-small">
+                            <div className="text-medium">
                                 {user.followers} seguidores
                             </div>
                         </div>
