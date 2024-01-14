@@ -1,3 +1,4 @@
+import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import { Header } from './components';
 import { Feed } from './pages';
@@ -6,12 +7,14 @@ import { defaultTheme } from './styles/themes/default';
 
 function App() {
     return (
-        <ThemeProvider theme={defaultTheme}>
-            <GlobalStyle />
+        <BrowserRouter>
+            <ThemeProvider theme={defaultTheme}>
+                <GlobalStyle />
 
-            <Header />
-            <Feed />
-        </ThemeProvider>
+                <Header />
+                <Feed />
+            </ThemeProvider>
+        </BrowserRouter>
     );
 }
 
