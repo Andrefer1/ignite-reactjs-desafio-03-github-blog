@@ -11,13 +11,19 @@
         "preview": "vite preview"
     },
     "dependencies": {
+        "@fortawesome/free-brands-svg-icons": "^6.5.1",
+        "@fortawesome/react-fontawesome": "^0.2.0",
+        "axios": "^1.6.5",
         "ignite-reactjs-desafio-03-github-blog": "link:",
         "prettier": "^3.2.1",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
+        "react-router": "^6.21.2",
+        "react-router-dom": "^6.21.2",
         "styled-components": "^6.1.8"
     },
     "devDependencies": {
+        "@fortawesome/free-solid-svg-icons": "^6.5.1",
         "@types/react": "^18.2.43",
         "@types/react-dom": "^18.2.17",
         "@types/styled-components": "^5.1.34",
