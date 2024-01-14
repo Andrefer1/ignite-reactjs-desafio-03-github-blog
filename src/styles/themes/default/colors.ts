@@ -10,11 +10,11 @@ const BASE_COLORS = {
     profile: '#0B1B2B',
     background: '#071422',
     input: '#040F1A',
-} as const;
+};
 
 const BRAND_COLORS = {
     blue: '#3294F8',
-} as const;
+};
 
 export type ColorsType = {
     base: typeof BASE_COLORS;

@@ -34,6 +34,14 @@ export const TEXT = {
         fontWeight: 400,
         lineHeight: '1.4rem',
     },
+    link: {
+        color: colors.brand.blue,
+        fontSize: '0.75rem',
+        fontWeight: 700,
+        lineHeight: '1.2rem',
+        textTransform: 'uppercase',
+        textDecoration: 'none',
+    },
 } as const;
 
 export type TypographyType = {

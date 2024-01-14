@@ -26,4 +26,27 @@ export const GlobalStyle = createGlobalStyle`
     h3 {
         ${(props) => props.theme.typographies.title.small}
     }
+
+    p {
+        color: ${(props) => props.theme.colors.base.text}
+    }
+
+    svg {
+        color: ${(props) => props.theme.colors.base.label}
+    }
+
+    a {
+        color: ${(props) => props.theme.colors.brand.blue};
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 1.2rem;
+        text-transform: uppercase;
+        text-decoration: none;
+    }
+
+    .text-small {
+        ${(props) => props.theme.typographies.text.medium}
+    }
+
+
 `;
