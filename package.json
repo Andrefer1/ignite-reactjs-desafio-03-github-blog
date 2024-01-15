@@ -14,6 +14,7 @@
         "@fortawesome/free-brands-svg-icons": "^6.5.1",
         "@fortawesome/react-fontawesome": "^0.2.0",
         "axios": "^1.6.5",
+        "date-fns": "^3.2.0",
         "ignite-reactjs-desafio-03-github-blog": "link:",
         "prettier": "^3.2.1",
         "react": "^18.2.0",
