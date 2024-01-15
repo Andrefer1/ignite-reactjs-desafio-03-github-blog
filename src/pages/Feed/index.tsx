@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { Input } from '../../components';
+import { Card, Input } from '../../components';
 import { GithubContext } from '../../contexts';
 import { Profile } from './components';
 import { FeedContainer } from './styles';
@@ -12,6 +12,12 @@ export function Feed() {
             <Profile />
 
             <Input totalPublicacoes={issues.total_count} />
+
+            <div className="cards">
+                {issues.items?.map((item) => (
+                    <Card key={item.id} item={item} />
+                ))}
+            </div>
         </FeedContainer>
     );
 }

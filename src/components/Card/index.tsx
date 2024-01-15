@@ -1,3 +1,4 @@
+import { dateFormatter } from '../../utils';
 import { CardContainer } from './styles';
 
 interface ItemIssue {
@@ -13,14 +14,25 @@ interface CardProps {
 }
 
 export function Card(props: CardProps) {
+    function sliceText(text: string) {
+        const displayedText = `${text.slice(0, 181)}...`;
+
+        return displayedText;
+    }
+
     return (
         <CardContainer>
             <div>
                 <h2>{props.item.title}</h2>
-                <span>{props.item.created_at}</span>
+
+                <span className="text-small">
+                    {dateFormatter(props.item.created_at)}
+                </span>
             </div>
 
-            <p>{props.item.body}</p>
+            <div>
+                <p className="text-medium">{sliceText(props.item.body)}</p>
+            </div>
         </CardContainer>
     );
 }

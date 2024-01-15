@@ -8,4 +8,11 @@ export const FeedContainer = styled.div`
 
     max-width: 54rem;
     margin: 0 auto;
+
+    .cards {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        margin-top: 3rem;
+    }
 `;
