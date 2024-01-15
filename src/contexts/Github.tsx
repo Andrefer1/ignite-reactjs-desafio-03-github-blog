@@ -42,7 +42,10 @@ export const GithubContext = createContext<GithubContextType>(
 
 export function GithubProvider({ children }: GithubProviderProps) {
     const [user, setUser] = useState<User>({} as User);
-    const [issues, setIssues] = useState<Issues>({} as Issues);
+    const [issues, setIssues] = useState<Issues>({
+        total_count: 0,
+        items: [],
+    });
 
     async function getUserDataFromGitHub() {
         const response = await api.get(`/users/andrefer1`);
@@ -58,7 +61,8 @@ export function GithubProvider({ children }: GithubProviderProps) {
             `/search/issues?q=${query}%20repo:${repository}`
         );
 
-        const data = response.data;
+        const data: Issues = response.data;
+
         setIssues(data);
     }
 
