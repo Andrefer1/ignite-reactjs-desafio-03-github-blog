@@ -16,7 +16,7 @@ interface User {
     name: string;
     public_repos: number;
     repos_url: string;
-    url: string;
+    html_url: string;
 }
 
 interface Issue {
@@ -33,6 +33,7 @@ interface Issues {
 
 interface IssueExtended extends Issue {
     comments: string;
+    html_url: string;
     user: Pick<User, 'login'>;
 }
 

@@ -24,7 +24,7 @@ export function Profile() {
                     <header>
                         <h1>{user.name}</h1>
 
-                        <Link to={user.url}>
+                        <Link to={user.html_url} target="_blank">
                             GITHUB
                             <FontAwesomeIcon
                                 size="xs"

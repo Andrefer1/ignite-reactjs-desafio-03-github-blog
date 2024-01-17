@@ -7,7 +7,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useContext, useEffect } from 'react';
-import { Link, useSearchParams } from 'react-router-dom';
+import { Link, NavLink, useSearchParams } from 'react-router-dom';
 import { GithubContext } from '../../../../contexts';
 import { dateFormatter } from '../../../../utils';
 import { ContentContainer, ProfileContainer } from './styles';
@@ -27,11 +27,11 @@ export function Profile() {
         <ProfileContainer>
             <ContentContainer>
                 <header>
-                    <Link to={'/'}>
+                    <NavLink to={'/'}>
                         <FontAwesomeIcon icon={faChevronLeft} />
                         Voltar
-                    </Link>
-                    <Link to={issue.number}>
+                    </NavLink>
+                    <Link to={issue.html_url} target="_blank">
                         Ver no Github
                         <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
                     </Link>
