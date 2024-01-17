@@ -1,10 +1,5 @@
-import {
-    ReactNode,
-    createContext,
-    useCallback,
-    useEffect,
-    useState,
-} from 'react';
+import { ReactNode, useCallback, useEffect, useState } from 'react';
+import { createContext } from 'use-context-selector';
 import { api } from '../libs/axios';
 
 interface User {
@@ -61,11 +56,11 @@ export function GithubProvider({ children }: GithubProviderProps) {
         items: [],
     });
 
-    async function getUserDataFromGitHub(): Promise<void> {
+    const getUserDataFromGitHub = useCallback(async (): Promise<void> => {
         const response = await api.get(`/users/andrefer1`);
         const data: User = response.data;
         setUser(data);
-    }
+    }, []);
 
     async function getIssuesFromRepository(query: string = ''): Promise<void> {
         const repository: string =
@@ -76,12 +71,6 @@ export function GithubProvider({ children }: GithubProviderProps) {
         const data: Issues = response.data;
         setIssues(data);
     }
-
-    // async function getIssueFromRepository(
-    //     numberParam: string | null
-    // ): Promise<void> {
-
-    // }
 
     const getIssueFromRepository = useCallback(
         async (numberParam: string | null) => {
@@ -98,7 +87,7 @@ export function GithubProvider({ children }: GithubProviderProps) {
 
     useEffect(() => {
         getUserDataFromGitHub();
-        getIssuesFromRepository();
+        // getIssuesFromRepository();
     }, []);
 
     return (

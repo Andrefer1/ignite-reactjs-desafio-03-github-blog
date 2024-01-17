@@ -1,11 +1,13 @@
-import { useContext } from 'react';
+import { useContextSelector } from 'use-context-selector';
 import { Card, Input } from '../../components';
 import { GithubContext } from '../../contexts';
 import { Profile } from './components';
 import { FeedContainer } from './styles';
 
 export function Feed() {
-    const { issues } = useContext(GithubContext);
+    const issues = useContextSelector(GithubContext, (context) => {
+        return context.issues;
+    });
 
     return (
         <FeedContainer>

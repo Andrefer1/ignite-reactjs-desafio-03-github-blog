@@ -1,4 +1,5 @@
-import { ChangeEvent, useContext } from 'react';
+import { ChangeEvent } from 'react';
+import { useContextSelector } from 'use-context-selector';
 import { GithubContext } from '../../contexts';
 import { InputContainer } from './styles';
 
@@ -7,7 +8,12 @@ interface InputProps {
 }
 
 export function Input(props: InputProps) {
-    const { getIssuesFromRepository } = useContext(GithubContext);
+    const getIssuesFromRepository = useContextSelector(
+        GithubContext,
+        (context) => {
+            return context.getIssuesFromRepository;
+        }
+    );
 
     return (
         <InputContainer>

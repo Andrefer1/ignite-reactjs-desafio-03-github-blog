@@ -5,13 +5,15 @@ import {
     faUserGroup,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { useContextSelector } from 'use-context-selector';
 import { GithubContext } from '../../../../contexts';
 import { ContentContainer, ProfileContainer } from './styles';
 
 export function Profile() {
-    const { user } = useContext(GithubContext);
+    const user = useContextSelector(GithubContext, (context) => {
+        return context.user;
+    });
 
     return (
         <ProfileContainer>

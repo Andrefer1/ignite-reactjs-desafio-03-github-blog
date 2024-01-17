@@ -1,11 +1,13 @@
-import { useContext } from 'react';
 import ReactMarkdown from 'react-markdown';
+import { useContextSelector } from 'use-context-selector';
 import { GithubContext } from '../../contexts';
 import { Profile } from './components';
 import { ContentContainer, IssueContainer } from './styles';
 
 export function Issue() {
-    const { issue } = useContext(GithubContext);
+    const issue = useContextSelector(GithubContext, (context) => {
+        return context.issue;
+    });
 
     return (
         <IssueContainer>

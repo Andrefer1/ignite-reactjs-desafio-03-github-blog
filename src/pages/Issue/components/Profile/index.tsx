@@ -6,18 +6,24 @@ import {
     faComment,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useContext, useEffect } from 'react';
+import { useEffect } from 'react';
 import { Link, NavLink, useSearchParams } from 'react-router-dom';
+import { useContextSelector } from 'use-context-selector';
 import { GithubContext } from '../../../../contexts';
 import { dateFormatter } from '../../../../utils';
 import { ContentContainer, ProfileContainer } from './styles';
 
 export function Profile() {
-    const { getIssueFromRepository } = useContext(GithubContext);
     const [searchParams] = useSearchParams();
-    const numberParam: string | null = searchParams.get('number');
+    const { issue, getIssueFromRepository } = useContextSelector(
+        GithubContext,
+        (context) => ({
+            issue: context.issue,
+            getIssueFromRepository: context.getIssueFromRepository,
+        })
+    );
 
-    const { issue } = useContext(GithubContext);
+    const numberParam: string | null = searchParams.get('number');
 
     useEffect(() => {
         getIssueFromRepository(numberParam);
