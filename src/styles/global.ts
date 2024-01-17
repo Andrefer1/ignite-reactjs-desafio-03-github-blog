@@ -9,6 +9,7 @@ export const GlobalStyle = createGlobalStyle`
 
     body {
         background: ${(props) => props.theme.colors.base.background};
+        -webkit-font-smoothing: antialiased;
     }
 
     body, input, button, h1, h2, p {
@@ -29,10 +30,6 @@ export const GlobalStyle = createGlobalStyle`
 
     p {
         color: ${(props) => props.theme.colors.base.text}
-    }
-
-    svg {
-        color: ${(props) => props.theme.colors.base.label}
     }
 
     a {

@@ -23,13 +23,11 @@ export const TITLE = {
 
 export const TEXT = {
     medium: {
-        color: colors.base.text,
         fontSize: '1rem',
         fontWeight: 400,
         lineHeight: '1.6rem',
     },
     small: {
-        color: colors.base.span,
         fontSize: '0.875rem',
         fontWeight: 400,
         lineHeight: '1.4rem',
