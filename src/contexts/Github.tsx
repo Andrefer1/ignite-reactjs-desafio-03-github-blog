@@ -87,7 +87,7 @@ export function GithubProvider({ children }: GithubProviderProps) {
 
     useEffect(() => {
         getUserDataFromGitHub();
-        // getIssuesFromRepository();
+        getIssuesFromRepository();
     }, []);
 
     return (
