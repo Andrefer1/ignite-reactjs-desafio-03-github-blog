@@ -58,6 +58,14 @@ export const ContentContainer = styled.div`
                 display: flex;
                 align-items: center;
                 gap: 0.5rem;
+
+                div {
+                    color: ${(props) => props.theme.colors.base.subtitle};
+                }
+
+                svg {
+                    color: ${(props) => props.theme.colors.base.label};
+                }
             }
         }
     }

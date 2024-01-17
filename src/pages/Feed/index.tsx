@@ -15,7 +15,7 @@ export function Feed() {
 
             <div className="cards">
                 {issues.items?.map((item) => (
-                    <Card key={item.id} item={item} />
+                    <Card key={item.number} item={item} />
                 ))}
             </div>
         </FeedContainer>

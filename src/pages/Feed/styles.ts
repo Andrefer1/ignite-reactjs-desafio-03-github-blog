@@ -6,9 +6,6 @@ export const FeedContainer = styled.div`
     align-items: center;
     flex-direction: column;
 
-    max-width: 54rem;
-    margin: 0 auto;
-
     .cards {
         display: flex;
         flex-wrap: wrap;

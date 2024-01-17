@@ -18,6 +18,7 @@ export const CardContainer = styled.div`
 
         span {
             white-space: nowrap;
+            color: ${(props) => props.theme.colors.base.span};
         }
 
         &:last-child {

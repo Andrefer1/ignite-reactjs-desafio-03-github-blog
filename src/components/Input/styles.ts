@@ -11,6 +11,10 @@ export const InputContainer = styled.div`
         h3 {
             margin-bottom: 0.75rem;
         }
+
+        span {
+            color: ${(props) => props.theme.colors.base.span};
+        }
     }
 
     input {

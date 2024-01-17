@@ -1,12 +1,12 @@
+import { useNavigate } from 'react-router';
 import { dateFormatter } from '../../utils';
 import { CardContainer } from './styles';
 
 interface ItemIssue {
-    id: number;
     body: string;
     created_at: string;
     title: string;
-    url: string;
+    number: string;
 }
 
 interface CardProps {
@@ -14,14 +14,20 @@ interface CardProps {
 }
 
 export function Card(props: CardProps) {
-    function sliceText(text: string) {
+    const navigate = useNavigate();
+
+    function sliceText(text: string): string {
         const displayedText = `${text.slice(0, 181)}...`;
 
         return displayedText;
     }
 
+    function handleOpenIssue(): void {
+        navigate(`/issue?number=${props.item.number}`);
+    }
+
     return (
-        <CardContainer>
+        <CardContainer onClick={handleOpenIssue}>
             <div>
                 <h2>{props.item.title}</h2>
 
